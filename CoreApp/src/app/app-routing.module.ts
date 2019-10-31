@@ -5,11 +5,11 @@ import {SomeCoreComponentComponent} from './some-core-component/some-core-compon
 const routes: Routes = [
   {
     path: 'app1',
-    loadChildren: '../../projects/app1/src/app/app.module-exports#App1Module'
+    loadChildren: () => import('../../projects/app1/src/app/app.module-exports').then(m => m.App1Module),
   },
   {
     path: 'app2',
-    loadChildren: '../../projects/app2/src/app/app.module-exports#App2Module'
+    loadChildren: () => import('../../projects/app2/src/app/app.module-exports').then(m => m.App2Module),
   }, 
   {
     path: 'somecoreroute',
