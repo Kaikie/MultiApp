@@ -5,12 +5,12 @@ import {SomeCoreComponentComponent} from './some-core-component/some-core-compon
 const routes: Routes = [
   {
     path: 'app1',
-    loadChildren: '../../projects/app1/src/app/app.module-export#App1Module'
+    loadChildren: '../../projects/app1/src/app/app.module-exports#App1Module'
   },
   {
     path: 'app2',
-    loadChildren: '../../projects/app2/src/app/app.module-export#App2Module'
-  },
+    loadChildren: '../../projects/app2/src/app/app.module-exports#App2Module'
+  }, 
   {
     path: 'somecoreroute',
     component: SomeCoreComponentComponent
@@ -20,7 +20,7 @@ const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   }
-];
+]; 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

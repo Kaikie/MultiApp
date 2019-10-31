@@ -30,5 +30,10 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  }
+  },
+  "include": [
+    ".",
+    "../node_modules/@wtw/**/*"
+]
+  
 }
