@@ -7,10 +7,7 @@ const routes: Routes = [
     path: 'app1',
     loadChildren: () => import('../../projects/app1/src/app/app.module-exports').then(m => m.App1Module),
   },
-  {
-    path: 'app2',
-    loadChildren: () => import('../../projects/app2/src/app/app.module-exports').then(m => m.App2Module),
-  }, 
+
   {
     path: 'somecoreroute',
     component: SomeCoreComponentComponent
