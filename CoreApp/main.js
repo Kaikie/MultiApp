@@ -1,5 +1,5 @@
-const { app, BrowserWindow } = require('electron')
-
+const { app, BrowserWindow, Menu } = require('electron')
+const shell = require('electron').shell
 let win;
 
 function createWindow () {
@@ -9,15 +9,41 @@ function createWindow () {
     height: 600,
     backgroundColor: '#ffffff',
     icon: `file://${__dirname}/dist/assets/logo.png`
+    
   })
 
 
   win.loadURL(`file://${__dirname}/dist/CoreApp/index.html`)
 
+  var app1Window=new BrowserWindow({
+    width:400,
+    height:400,
+    show:false
+  })
+  app1Window.loadURL(`file://${__dirname}/projects/app1/src/app/app.component.html`)
   // Event when the window is closed.
   win.on('closed', function () {
     win = null
   })
+  app1Window.on('closed',function(){
+   
+  })
+///projects/app1/src/index.html
+  var menu = Menu.buildFromTemplate([
+    {
+        label: 'Menu',
+        submenu: [
+            {label:'App1',
+          click(){
+            app1Window.show()
+          }},//Modificar por los valores que quiera
+            {label:'App2'},
+            {label:'Salir',
+          click(){app.quit()}}
+        ]
+    }
+])
+Menu.setApplicationMenu(menu); 
 }
 
 // Create window on electron intialization
