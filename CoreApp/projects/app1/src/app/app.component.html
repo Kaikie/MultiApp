@@ -1,2 +1,9 @@
+<script>
+    const {ipcRenderer} = window.require('electron');
+    ipcRenderer.on('navigate',(event,data)=>{
+        console.log(data);
+    })        
+</script>
+<title>App1</title>
 <p>app1 funciona</p>
 <router-outlet></router-outlet>

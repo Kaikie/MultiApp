@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SomeCoreComponentComponent } from './some-core-component/some-core-component.component';
 
+import { NgxElectronModule } from 'ngx-electron';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,7 +15,8 @@ import { SomeCoreComponentComponent } from './some-core-component/some-core-comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxElectronModule
   ],
   providers: [],
   bootstrap: [AppComponent]
