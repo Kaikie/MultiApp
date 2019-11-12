@@ -7,6 +7,7 @@ import { SomeCoreComponentComponent } from './some-core-component/some-core-comp
 
 import { NgxElectronModule } from 'ngx-electron';
 
+import { ServicioService } from './servicio.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,7 @@ import { NgxElectronModule } from 'ngx-electron';
     HttpClientModule,
     NgxElectronModule
   ],
-  providers: [],
+  providers: [ServicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

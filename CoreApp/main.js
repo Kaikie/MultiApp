@@ -11,14 +11,14 @@ function createWindow () {
     icon: `file://${__dirname}/dist/assets/logo.png`
     
   })
-
+  win.webContents.openDevTools();
 
   win.loadURL(`file://${__dirname}/dist/CoreApp/index.html`)
 
   var app1Window=new BrowserWindow({
     width:400,
     height:400,
-    show:false
+    show:false,
   })
   app1Window.loadURL(`file://${__dirname}/projects/app1/src/app/app.component.html`)
   // Event when the window is closed.
@@ -34,9 +34,10 @@ function createWindow () {
         label: 'Menu',
         submenu: [
             {label:'App1',
-          click(){
-            app1Window.show()
-          }},//Modificar por los valores que quiera
+            route:'/app',
+          click:(menuItem, app1Window) => {
+            app1Window.webContents.send('navigate',{route:menuItem.route});
+          }},
             {label:'App2'},
             {label:'Salir',
           click(){app.quit()}}
